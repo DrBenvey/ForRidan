@@ -2,12 +2,14 @@
 CREATE TABLE stock
 (
     id INT PRIMARY KEY IDENTITY(1,1),
-    name VARCHAR(30) UNIQUE CHECK(name !='')/*уникальность имени и непустое значение*/
+    name VARCHAR(30) UNIQUE CHECK(name !=''),/*уникальность имени и непустое значение*/
+    address text NOT NULL	
 );
 CREATE TABLE product
 (
     id INT PRIMARY KEY IDENTITY(1,1),
-    name VARCHAR(100) UNIQUE CHECK(name !='')/*уникальность имени и непустое значение*/
+    name VARCHAR(100) UNIQUE CHECK(name !=''),/*уникальность имени и непустое значение*/
+    weight FLOAT CHECK(weight > 0.0)	
 );
 CREATE TABLE movement
 (

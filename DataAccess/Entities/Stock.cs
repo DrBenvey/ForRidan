@@ -8,8 +8,6 @@ namespace DataAccess.Entities
 
     public class Stock : NamedId
     {
-        // todo можно при развитии добавлять поля
-        // адресс склада
-        // телефон и т.д.
+        public string address { get; set; }
     }
 }

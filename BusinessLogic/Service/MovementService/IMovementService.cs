@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Service.MovementService
 {
-    public interface IMovementService: ICRUDService<Movement>
+    public interface IMovementService: ICRService<Movement>
     {
-
+        //todo
     }
 }

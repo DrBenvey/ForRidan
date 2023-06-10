@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Service.Base
 {
-    public interface ICRUDService<T>: ICRService<T>
+    public interface ICRService<T>
     {
-        Task Update(T obj);
-        Task Delete(int key);
+        Task<T> Create(T obj);
+        Task<List<T>> Read();
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Repository.Base
 {
-    public interface ICRUDRepository<T>: ICRRepository<T>
+    public interface ICRRepository<T>
     {
-        Task Update(T obj);
-        Task Delete(int key);
+        Task<T> Create(T obj);
+        Task<List<T>> Read();
     }
 }

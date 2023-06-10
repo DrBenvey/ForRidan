@@ -17,10 +17,11 @@ namespace BusinessLogic.Repository.ProductRepository
             return await _context.Products.ToListAsync();
         }
         
-        public async Task Create(Product obj)
+        public async Task<Product> Create(Product obj)
         {
             await _context.AddAsync(obj);
             await _context.SaveChangesAsync();
+            return obj;
         }
         
         public async Task Delete(int key)
@@ -38,7 +39,8 @@ namespace BusinessLogic.Repository.ProductRepository
             Product? old_obj = await _context.Products.Where(e => e.id == obj.id).FirstOrDefaultAsync();
             if (old_obj != null)
             {
-                old_obj = obj;
+                old_obj.name = obj.name;
+                old_obj.weight = obj.weight;
                 await _context.SaveChangesAsync();
             }
         }

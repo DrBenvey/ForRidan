@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Repository.MovementRepository
 {
-    public interface IMovementRepository: ICRUDRepository<Movement>
+    public interface IMovementRepository: ICRRepository<Movement>
     {
-        Task Delete(List<Movement> keys);
+        //todo
+        //Task Delete(List<Movement> keys);
     }
 }

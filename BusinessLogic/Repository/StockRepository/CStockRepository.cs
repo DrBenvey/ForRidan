@@ -23,10 +23,11 @@ namespace BusinessLogic.Repository.StockRepository
             return await _context.Stocks.ToListAsync();
         }
         
-        public async Task Create(Stock obj)
+        public async Task<Stock> Create(Stock obj)
         {
             await _context.AddAsync(obj);
             await _context.SaveChangesAsync();
+            return obj;
         }
         
         public async Task Delete(int key)
@@ -44,7 +45,8 @@ namespace BusinessLogic.Repository.StockRepository
             Stock? old_obj = await _context.Stocks.Where(e => e.id == obj.id).FirstOrDefaultAsync();
             if (old_obj != null)
             {
-                old_obj = obj;
+                old_obj.name = obj.name;
+                old_obj.address = obj.address;
                 await _context.SaveChangesAsync();
             }
         }

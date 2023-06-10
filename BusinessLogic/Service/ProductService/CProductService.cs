@@ -18,9 +18,9 @@ namespace BusinessLogic.Service.ProductService
             return await _productRepository.Read();
         }
 
-        public async Task Create(Product obj)
+        public async Task<Product> Create(Product obj)
         {
-            await _productRepository.Read();
+            return await _productRepository.Create(obj);
         }
 
         public async Task Delete(int key)

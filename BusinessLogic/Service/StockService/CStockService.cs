@@ -24,9 +24,9 @@ namespace BusinessLogic.Service.StockService
             return await _stockRepository.Read();
         }
 
-        public async Task Create(Stock obj)
+        public async Task<Stock> Create(Stock obj)
         {
-            await _stockRepository.Create(obj);
+            return await _stockRepository.Create(obj);
         }
 
         public async Task Delete(int key)

@@ -1,0 +1,55 @@
+﻿<script src="~/js/vm/stock.vm.js" type="text/javascript"></script>
+
+<div id="StocksGroup" class="div-group">
+    <h1>Имеющиеся склады</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>имя</td>
+                <td>адрес</td>
+                <td colspan="2">действия</td>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: Stocks">
+            <tr>
+                <td data-bind="text: id"></td>
+                <td>
+                    <input data-bind="value: name" style="width: -webkit-fill-available;">
+                </td>
+                <td>
+                    <textarea data-bind="value: address" style="resize: none;width: -webkit-fill-available;"></textarea>
+                </td>
+                <td>
+                    <button data-bind="click: $root.deleteStocks.bind($data,id)" style="width: -webkit-fill-available;">удалить</button>
+                </td>
+                <td>
+                    <button data-bind="click: $root.updateStocks.bind($data,id)" style="width: -webkit-fill-available;">сохранить</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Добавить склад</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>имя</td>
+                <td>адрес</td>
+                <td>действиe</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input data-bind="value: Stock().name" style="width: -webkit-fill-available;">
+                </td>
+                <td>
+                    <textarea data-bind="value: Stock().address" style="resize: none;width: -webkit-fill-available;"></textarea>
+                </td>
+                <td>
+                    <button data-bind="click: addStocks" style="width: -webkit-fill-available;">добавить</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

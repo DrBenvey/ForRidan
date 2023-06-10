@@ -19,12 +19,7 @@ namespace BusinessLogic.Service.MovementService
             _movementRepository = movementRepository;
         }
 
-        public Task Create(Movement obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task Delete(int key)
+        public Task<Movement> Create(Movement obj)
         {
             throw new NotImplementedException();
         }
@@ -32,11 +27,6 @@ namespace BusinessLogic.Service.MovementService
         public async Task<List<Movement>> Read()
         {
             return await _movementRepository.Read();
-        }
-
-        public Task Update(Movement obj)
-        {
-            throw new NotImplementedException();
         }
     }
 }
