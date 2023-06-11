@@ -38,5 +38,6 @@ namespace BusinessLogic.Service.StockService
         {
             await _stockRepository.Update(obj);
         }
+
     }
 }

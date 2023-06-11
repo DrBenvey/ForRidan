@@ -1,11 +1,5 @@
-﻿using BusinessLogic.Repository.ProductRepository;
-using DataAccess.Entities;
+﻿using DataAccess.Entities;
 using DataAccess;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace BusinessLogic.Repository.StockRepository

@@ -12,6 +12,7 @@ namespace BusinessLogic.Repository.ProductRepository
             _context = context;
         }
 
+
         public async Task<List<Product>> Read()
         {
             return await _context.Products.ToListAsync();

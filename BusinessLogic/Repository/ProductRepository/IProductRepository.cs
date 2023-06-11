@@ -5,6 +5,6 @@ namespace BusinessLogic.Repository.ProductRepository
 {
     public interface IProductRepository:ICRUDRepository<Product>
     {
-
+        
     }
 }

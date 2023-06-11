@@ -32,5 +32,6 @@ namespace BusinessLogic.Service.ProductService
         {
             await _productRepository.Update(obj);
         }
+
     }
 }

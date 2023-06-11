@@ -15,25 +15,25 @@ namespace UserInterface.Controllers
             _stockService = stockService;
         }
 
-        // GET: /product/Read
+        // GET: /stock/Read
         public async Task<IEnumerable<Stock>> Read()
         {
             return await _stockService.Read();
         }
 
-        // DELETE: /product/Delete
+        // DELETE: /stock/Delete
         public async Task Delete(int key)
         {
             await _stockService.Delete(key);
         }
 
-        // PUT: /product/Update
+        // PUT: /stock/Update
         public async Task Update(Stock obj)
         {
             await _stockService.Update(obj);
         }
 
-        // POST: /product/Create
+        // POST: /stock/Create
         public async Task<Stock> Create(Stock obj)
         {
             return await _stockService.Create(obj);

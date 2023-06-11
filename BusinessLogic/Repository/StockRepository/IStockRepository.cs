@@ -10,6 +10,5 @@ namespace BusinessLogic.Repository.StockRepository
 {
     public interface IStockRepository : ICRUDRepository<Stock>
     {
-        
     }
 }

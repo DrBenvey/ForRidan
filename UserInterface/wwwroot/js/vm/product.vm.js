@@ -9,7 +9,7 @@
     self.Product = ko.observable({ id: 0, name: '', weight: 0.0 });
     loadProducts();
 
-    //functions for Products()
+    //functions for Products
     function loadProducts() {
         $.get(`${base_url}/Read`, function (data, status)
             {
@@ -79,7 +79,7 @@
                 alert("error");
             });
     }
-} // ViewModel
+} // ProductViewModel
 $(function () {
     ko.applyBindings(new ProductViewModel(), $('#ProductsGroup')[0]);
 });

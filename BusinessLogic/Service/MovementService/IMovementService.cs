@@ -10,6 +10,6 @@ namespace BusinessLogic.Service.MovementService
 {
     public interface IMovementService: ICRService<Movement>
     {
-        //todo
+        Task<Int64> GetReport(Movement obj);
     }
 }

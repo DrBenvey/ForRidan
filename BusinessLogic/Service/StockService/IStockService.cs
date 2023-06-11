@@ -10,6 +10,5 @@ namespace BusinessLogic.Service.StockService
 {
     public interface IStockService: ICRUDService<Stock>
     {
-
     }
 }

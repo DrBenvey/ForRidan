@@ -1,0 +1,90 @@
+﻿<script src="~/js/vm/movement.vm.js" type="text/javascript"></script>
+
+<div id="MovementsGroup" class="div-group">
+    <h1>История движений</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>id движения</td>
+                <td>id товара</td>
+                <td>id склада</td>
+                <td>время</td>
+                <td>количество</td>
+                <td>
+                    <button data-bind="click: reloadMovements" style="width: -webkit-fill-available;">обновить</button>
+                </td>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: Movements">
+            <tr>
+                <td data-bind="text: id"></td>
+                <td data-bind="text: id_product"></td>
+                <td data-bind="text: id_stock"></td>
+                <td data-bind="text: сreated"></td>
+                <td data-bind="text: balance" colspan="2"></td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Формирование отчета</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>id товара</td>
+                <td>id склада</td>
+                <td>время</td>
+                <td>количество</td>
+                <td>
+                    <button data-bind="click: getReport" style="width: -webkit-fill-available;">сформировать</button>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="number" step="1" data-bind="value: MovementReport().id_product" style="width: -webkit-fill-available;">
+                </td>
+                <td>
+                    <input type="number" step="1" data-bind="value: MovementReport().id_stock" style="width: -webkit-fill-available;">
+                </td>
+                <td>
+                    <input id="ReportTime" type="datetime-local" data-bind="value : MovementReport().сreated" style="width: -webkit-fill-available;">
+                </td>
+                <td data-bind="text: MovementReport().balance" colspan="2"></td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Приход/Расход товара</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>id товара</td>
+                <td>id склада</td>
+                <td>время</td>
+                <td>количество</td>
+                <td colspan="2">действия</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="number" step="1" data-bind="value: MovementMove().id_product" style="width: -webkit-fill-available;">
+                </td>
+                <td>
+                    <input type="number" step="1" data-bind="value: MovementMove().id_stock" style="width: -webkit-fill-available;">
+                </td>
+                <td>
+                    <input id="MoveTime" type="datetime-local" data-bind="value : MovementMove().сreated" style="width: -webkit-fill-available;">
+                </td>
+                <td>
+                    <input type="number" step="1" min="1" data-bind="value: MovementMove().balance" style="width: -webkit-fill-available;">
+                </td>
+                <td>
+                    <button data-bind="click: plusMovement" style="width: -webkit-fill-available;">приход</button>
+                </td>
+                <td>
+                    <button data-bind="click: minusMovement" style="width: -webkit-fill-available;">расход</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

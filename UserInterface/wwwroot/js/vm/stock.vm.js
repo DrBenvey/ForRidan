@@ -9,7 +9,7 @@
     self.Stock = ko.observable({ id: 0, name: '', address: '' });
     loadStocks();
 
-    //functions for Products()
+    //functions for Stocks
     function loadStocks() {
         $.get(`${base_url}/Read`, function (data, status) {
             if (status != 'success') {
@@ -21,7 +21,7 @@
             .fail(function () {
                 alert("error");
             }
-            );
+        );
     }
 
     self.deleteStocks = function (id) {

@@ -10,7 +10,8 @@ namespace BusinessLogic.Repository.MovementRepository
 {
     public interface IMovementRepository: ICRRepository<Movement>
     {
-        //todo
-        //Task Delete(List<Movement> keys);
+        Task<Int64> TryToUpdateForInsert(Movement obj);
+        Task<Movement?> ReadFirstBeforDate(Movement obj);
+
     }
 }

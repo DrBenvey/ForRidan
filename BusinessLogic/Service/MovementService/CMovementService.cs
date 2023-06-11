@@ -1,12 +1,5 @@
 ﻿using BusinessLogic.Repository.MovementRepository;
-using BusinessLogic.Repository.ProductRepository;
-using BusinessLogic.Service.ProductService;
 using DataAccess.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLogic.Service.MovementService
 {
@@ -19,9 +12,22 @@ namespace BusinessLogic.Service.MovementService
             _movementRepository = movementRepository;
         }
 
-        public Task<Movement> Create(Movement obj)
+        public async Task<Movement> Create(Movement obj)
         {
-            throw new NotImplementedException();
+            long IsOkToCreate = await _movementRepository.TryToUpdateForInsert(obj);
+            if (IsOkToCreate != -1)
+            {
+                obj.balance = IsOkToCreate;
+                return await _movementRepository.Create(obj);
+            }
+            else
+                throw new Exception();
+        }
+
+        public async Task<long> GetReport(Movement obj)
+        {
+            Movement? tmp = await _movementRepository.ReadFirstBeforDate(obj);
+            return tmp == null ? 0 : tmp.balance;
         }
 
         public async Task<List<Movement>> Read()

@@ -5,7 +5,7 @@ insert into [ForRidan].[dbo].[product] (name,weight) values
 ('test_product_name_3',14),
 ('test_product_name_4',157.19),
 ('test_product_name_5',11111),
-('test_product_name_6',44.44)
+('test_product_name_6',44.44);
 /*demo stock*/
 insert into [ForRidan].[dbo].[stock] (name,address) values 
 ('test_stock_name_1','Индустриальная ул., 4, Смоленск, Смоленская обл., 214036'),
@@ -13,4 +13,12 @@ insert into [ForRidan].[dbo].[stock] (name,address) values
 ('test_stock_name_3','test_adress_3'),
 ('test_stock_name_4','test_adress_4'),
 ('test_stock_name_5','test_adress_5'),
-('test_stock_name_6','test_adress_6')
+('test_stock_name_6','test_adress_6');
+/*demo movement*/
+insert into [ForRidan].[dbo].[movement] 
+(id_stock,id_product,сreated,balance) 
+values 
+(1,1,getdate()-5,1),
+(1,1,getdate()-4,12),
+(1,2,getdate()-3,4),
+(2,2,getdate()-2,6);

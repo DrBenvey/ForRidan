@@ -10,5 +10,6 @@ namespace BusinessLogic.Repository.Base
     {
         Task<T> Create(T obj);
         Task<List<T>> Read();
+        
     }
 }
